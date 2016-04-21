@@ -15,19 +15,19 @@ public class CSE2Linear{
         //accept input in certain format
         for (int i = 0; i < number_of_list;){
             if(!myScanner.hasNextInt()){
-                System.out.print("Please enter 15 integers: ");
+                System.out.print("Invalid input, please enter an integer: ");
                 myScanner.next();
                 continue;
             }
             int temp = myScanner.nextInt();
             if(temp < 0 || temp > 100){
-                System.out.print("Invalid input, please enter 15 numbers from 0 to 100: ");
+                System.out.print("Invalid input, please enter a number from 0 to 100: ");
                 continue;
             }
             myList[i] = temp;
             if(i >= 1){
                 if(myList[i] < myList[i - 1]){
-                    System.out.print("Please enter a greater value: ");
+                    System.out.print("Invalid input, please enter a greater value: ");
                 continue;
                 }
             }
@@ -37,8 +37,8 @@ public class CSE2Linear{
         }
         else{*/
         //sort and print input
-        myList = sort(myList);
-        printSort(myList);
+        /*myList = sort(myList);
+        printSort(myList);*/
         //search for a number by binary search
         System.out.println("Enter a grade to search for: ");
         int searchNumber = myScanner.nextInt();
@@ -72,13 +72,13 @@ public class CSE2Linear{
         return myList;
     }
     //print the sorted array
-    public static void printSort(int[] myList){
+   /* public static void printSort(int[] myList){
         System.out.print("Sorted: \n");
         for(int i = 0; i < myList.length; i++){
             System.out.print(myList[i] + " ");
         }
         System.out.println("");
-    }
+    }*/
     // search for a number by binary search  
     public static void binarySearch(int[] myList, int key) { 
         int i = 1;
@@ -122,14 +122,20 @@ public class CSE2Linear{
     }
     // search number by linear search
     public static void linearSearch(int[] myList, int searchNumber){
-        int i = 0;
-        for(i = 1; i < myList.length; i++){
+        int i = 1;
+        for(i = 1; i <= myList.length; i++){
+            if(i < myList.length){
             if(searchNumber == myList[i]){
                 System.out.println(searchNumber + " was found in the list with " + i + " iterations.");
                 break;
             }
+            }
+            if(i == myList.length){
+                System.out.println(searchNumber + " was not found in the list with " + i + " iterations.");
+            }
+            
         }
-        System.out.println(searchNumber + " was not found in the list with " + i + " iterations.");
+        
     }
 }
 
