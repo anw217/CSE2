@@ -12,7 +12,7 @@ public class Triangles{
             System.out.print("Please enter an integer bewtween 5 and 30: ");//prompt to enter a number
             while(!myScanner.hasNextInt()){
                 myScanner.next();
-                System.out.print("Incalid input, please enter an integer between 5 and 30: ");
+                System.out.print("Invalid input, please enter an integer between 5 and 30: ");
             }// if it's not an integer, ask again until getting an integer
             input = myScanner.nextInt();//accept input
         }while(input < 5 || input >30);//input should between 5 and 30, otherwise redo do loop

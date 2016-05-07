@@ -8,7 +8,7 @@ public class RunFactorial{
         Scanner myscanner = new Scanner( System.in);//declare an instance of the Scanner object
         int input;//set an integer named input
         boolean firstTime = true;// set a boolean named frisTime
-        do{//wet up a do while loop
+        do{//set up a do while loop
             if(firstTime){//if firsTime is true
             System.out.print("Enter a number between 9 and 16: ");//request input
             firstTime = false;
